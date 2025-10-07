@@ -7,11 +7,6 @@ body {
   scroll-behavior: smooth;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
 /* Navbar con efecto moderno */
 header {
   position: fixed;
@@ -67,9 +62,7 @@ header {
 }
 .hero h1 {
   font-size: 8rem;
-  font-family: 'High Empathy'; /* Nombre exacto que usas en el CSS */
-  src: url('HighEmpathy.ttf') format('woff2'), /* La ruta ahora es relativa */
-      url('HighEmpathy.otf') format('woff');
+  font-family: 'High Empathy', serif;
   margin: 0;
 }
 .hero p {
@@ -187,41 +180,17 @@ section {
 
 /* Responsivo */
 @media (max-width: 768px) {
-  /* ... tus otras reglas de corrección ... */
+  .side-images { display: none; }
+  .invitacion { padding: 80px 20px; }
+}
 
-  /* --- Corrección de la Sección Invitación --- */
-  .invitacion {
-    /* Desactivamos el flexbox si lo tienes en escritorio para una mejor columna */
-    flex-direction: column;
-    padding: 40px 20px; /* Ajustamos el padding para móvil */
-  }
-
-  /* 1. MOSTRAR las Imágenes y Alinear */
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
   .side-images {
-    display: flex !important; /* Forzamos a que se muestren */
-    position: relative; /* Cambiamos a posicionamiento relativo para que fluyan en el documento */
-    flex-direction: row; /* Las mostramos una al lado de la otra */
-    justify-content: center; /* Centramos las imágenes */
-    gap: 15px; /* Reducimos el espacio entre ellas */
-    margin: 30px auto; /* Agregamos margen vertical */
-    left: auto; /* Anulamos left: 100px */
-    right: auto; /* Anulamos right: 100px */
+    display: none;
   }
-
-  /* 2. Ajustar el Tamaño de las Fotos para Móvil */
-  .side-images img {
-    width: 120px; /* Tamaño de imagen más pequeño para no desbordar */
-    height: 120px; /* Aseguramos que sean cuadradas o ajustadas */
-    object-fit: cover;
-    gap: 10px;
-  }
-
-  /* 3. Ajuste Final de la Animación de Imagen */
-  .side-images.left, 
-  .side-images.right {
-    /* Apilamos las imágenes una después de la otra sin alineaciones laterales */
-    flex-direction: row;
-    gap: 15px;
+  .invitacion {
+    padding: 80px 20px;
   }
 }
 
@@ -410,6 +379,9 @@ footer {
   padding: 18px 34px;
   box-sizing: border-box;
 
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s ease, transform .7s ease;
 }
 .timeline-item.show { opacity: 1; transform: translateY(0); }
 
@@ -437,15 +409,15 @@ footer {
   gap: 16px;
   align-items: center;
   background: #fff;
-  padding: 16px 18px;
+  padding: 10px 14px;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  max-width: 420px;
+  max-width: 250px;
 }
 
 .timeline-photo {
   flex: 0 0 auto;
-  width: 96px; height: 96px;
+  width: 76px; height: 76px;
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid #fff;
@@ -478,40 +450,32 @@ footer {
 
 /* responsive */
 @media (max-width: 820px) {
-  /* ... (Tus otras correcciones de Navbar, Hero, etc.) ... */
-
-  /* --- PROGRAMA / TIMELINE CORRECCIÓN --- */
-  
-  /* 1. Mover la línea central a la izquierda */
-  .timeline::before {
-    left: 28px; 
+ .timeline::before {
+    left: 28px; /* Mueve la línea central a la izquierda */
   }
 
-  /* 2. Todos los ítems ocupan el 100% y se anclan a la izquierda */
   .timeline-item {
-    width: 100%;
-    left: 0;
-    padding: 18px 16px 18px 60px; /* Asegura espacio a la izquierda para la línea/punto */
-    text-align: left; /* MUY IMPORTANTE: Alinea el texto a la izquierda */
+    width: 100%; /* Ocupa todo el ancho */
+    left: 0; /* Asegura que el contenedor esté al inicio */
+    padding: 18px 16px 18px 60px; /* Suficiente espacio para que la tarjeta no choque con la línea */
+    text-align: left; /* Todo alineado a la izquierda */
   }
 
-  /* 3. Anular la alineación derecha de los ítems 'left' de escritorio */
-  .timeline-item.left {
-    text-align: left; /* Obliga a la izquierda */
-  }
-
-  /* 4. Anclaje de los puntos del timeline */
+  /* Anclaje de los puntos del timeline a la nueva posición de la línea */
   .timeline-item.left::before,
   .timeline-item.right::before {
-    left: 22px; /* Posición del punto sobre la línea */
+    left: 22px; /* Ancla los puntos sobre la línea vertical */
     right: auto;
   }
-  
-  /* 5. Asegurar que las tarjetas estén alineadas a la izquierda (no centradas ni a la derecha) */
-  .timeline-item.left .timeline-card,
-  .timeline-item.right .timeline-card {
-    margin-left: 0; /* Eliminar cualquier margen automático de centrado */
-    /* Aseguramos que la tarjeta esté a la izquierda del padding */
+
+  /* Forzamos que los ítems del lado "izquierdo" se alineen a la izquierda en móvil */
+  .timeline-item.left {
+    text-align: left; /* ANULA el text-align: right; del CSS de escritorio */
+  }
+
+  .timeline-card {
+    max-width: 100%; /* La tarjeta ocupa todo el espacio disponible */
+    flex-direction: row; /* Mantenemos la foto junto al texto */
   }
 }
 
@@ -747,13 +711,6 @@ footer {
 .show {
   opacity: 1;
   transform: translate(0, 0);
-}
-
-@media (max-width: 600px) {
-  section, .box {
-    padding: 60px 15px;
-    margin: 60px 10px;
-  }
 }
 
 /* --- Corrección de desplazamiento lateral --- */
