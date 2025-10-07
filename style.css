@@ -185,17 +185,41 @@ section {
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .side-images { display: none; }
-  .invitacion { padding: 80px 20px; }
-}
+  /* ... tus otras reglas de corrección ... */
 
-/* Para pantallas pequeñas */
-@media (max-width: 768px) {
-  .side-images {
-    display: none;
-  }
+  /* --- Corrección de la Sección Invitación --- */
   .invitacion {
-    padding: 80px 20px;
+    /* Desactivamos el flexbox si lo tienes en escritorio para una mejor columna */
+    flex-direction: column;
+    padding: 40px 20px; /* Ajustamos el padding para móvil */
+  }
+
+  /* 1. MOSTRAR las Imágenes y Alinear */
+  .side-images {
+    display: flex !important; /* Forzamos a que se muestren */
+    position: relative; /* Cambiamos a posicionamiento relativo para que fluyan en el documento */
+    flex-direction: row; /* Las mostramos una al lado de la otra */
+    justify-content: center; /* Centramos las imágenes */
+    gap: 15px; /* Reducimos el espacio entre ellas */
+    margin: 30px auto; /* Agregamos margen vertical */
+    left: auto; /* Anulamos left: 100px */
+    right: auto; /* Anulamos right: 100px */
+  }
+
+  /* 2. Ajustar el Tamaño de las Fotos para Móvil */
+  .side-images img {
+    width: 120px; /* Tamaño de imagen más pequeño para no desbordar */
+    height: 120px; /* Aseguramos que sean cuadradas o ajustadas */
+    object-fit: cover;
+    gap: 10px;
+  }
+
+  /* 3. Ajuste Final de la Animación de Imagen */
+  .side-images.left, 
+  .side-images.right {
+    /* Apilamos las imágenes una después de la otra sin alineaciones laterales */
+    flex-direction: row;
+    gap: 15px;
   }
 }
 
