@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda Evelin & Misael</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menú de navegación -->
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#invitacion">Invitación</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contador">Contador</a></li>
+        <li><a href="#programa">Programa</a></li>
+        <li><a href="#rsvp">Asistencia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Portada con foto -->
+  <section id="inicio" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1>Evelin & Misael</h1>
+      <p>22 · Noviembre · 2025</p>
+      <a href="#invitacion" class="btn">Ver Invitación</a>
+    </div>
+  </section>
+
+<!-- Sección Invitación -->
+<section id="invitacion" class="section invitacion">
+  <div class="side-images left">
+    <img src="preiodico.JPG" alt="pareja">
+    <img src="manosjuntas.JPG" alt="boda">
+  </div>
+
+  <div class="content fade-in">
+    <p class="subtitulo">Tenemos el honor de invitarte a celebrar nuestra boda</p>
+    <h1 class="nombres">Evelin <span>&</span> Misael</h1>
+    <p class="fecha">22 • 11 • 2025</p>
+  </div>
+
+  <div class="side-images right">
+    <img src="brazo.JPG" alt="anillos">
+    <img src="cuello.JPEG" alt="brindis">
+  </div>
+</section>
+
+  <!-- Ubicación -->
+  <section id="ubicacion" class="box fade-in">
+    <h3>Ceremonia civil y recepción</h3>
+    <h2>GW Salón de Eventos</h2>
+    <p>Av. Benito Juárez 1410-Local 5-B,<br>
+    Col. 15, 66057 Cd. Gral. Escobedo, N.L</p>
+<div class="mapa">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1796.1088823211448!2d-100.3135011!3d25.7963889!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662930067157bc5%3A0x6c00f8222fae7065!2sGW%20Salon%20de%20Eventos!5e0!3m2!1ses!2smx!4v1755925529435!5m2!1ses!2smx"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    width="100%"
+    height="300"
+    frameborder="0"
+    style="border:0;"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+  </section>
+
+
+<!-- Sección Programa (6 eventos con foto) -->
+<section id="programa" class="box fade-in">
+  <h1>Programa</h1>
+
+  <div class="timeline">
+
+    <!-- 1 -->
+    <div class="timeline-item left">
+      <div class="timeline-card">
+        <div class="timeline-photo">
+          <img src="arco.jpg" alt="Ceremonia civil" loading="lazy">
+        </div>
+        <div class="timeline-info">
+          <h3>Inicio recepción</h3>
+          <span class="time">8:30 pm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="timeline-item right">
+      <div class="timeline-card">
+        <div class="timeline-photo">
+          <img src="juntos.png" alt="Brindis" loading="lazy">
+        </div>
+        <div class="timeline-info">
+          <h3>Presentación de Novios</h3>
+          <span class="time">9:00 pm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="timeline-item left">
+      <div class="timeline-card">
+        <div class="timeline-photo">
+          <img src="vela.png" alt="Inicio recepción" loading="lazy">
+        </div>
+        <div class="timeline-info">
+          <h3>Cena</h3>
+          <span class="time">9:30 pm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 (nuevo) -->
+    <div class="timeline-item right">
+      <div class="timeline-card">
+        <div class="timeline-photo">
+          <img src="carrooos.png" alt="Banquete" loading="lazy">
+        </div>
+        <div class="timeline-info">
+          <h3> Fin recepción</h3>
+          <span class="time">1:00 am</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <!-- Contador -->
+  <section id="contador" class="box fade-in">
+    <h3>FALTAN</h3>
+    <div id="timer"></div>
+  </section>
+
+<!-- Sección Dress Code -->
+<section id="dresscode" class="box fade-in">
+  <div class="dresscode-container">
+    <h1 class="section-title">Dress Code</h1>
+    <h2>Formal</h2>
+    <h2>Vestido largo y Traje</h2>
+    <div class="divider"></div>
+    <div class="dresscode-content">
+      <div class="dresscode-icon">
+        <img src="vst.png" alt="Dress Code" />
+      </div>
+      <div class="dresscode-text">
+        <h3>Cualquier color es bienvenido excepto blanco y beige, dejemos brillar a los novios</h3>
+      </div>
+    </div>
+    <div class="divider"></div>
+        <h2>
+          Tómate una noche libre, <br>
+          esta fiesta es <b>sin niños.</b>
+        </h2>
+    <p class="note">¡Gracias por tu comprensión!</p>
+  </div>
+</section>
+<!-- Sección Sugerencia de Regalo -->
+<section id="regalo" class="box fade-in regalo-section">
+  <h2 class="section-title">Sugerencia de Regalo</h2>
+  <div class="regalo-card">
+    <div class="regalo-img-container">
+      <img src="sobre.png" alt="Sugerencia de regalo" class="regalo-img">
+    </div>
+    <div class="regalo-text">
+      <h3>Lluvia de Sobres</h3>
+      <p class="mensaje">Encontrarás nuestro buzón el día del evento.</p>
+      <p class="nota">
+        Nos encantaría invitar a todos, pero debido a la capacidad del lugar, 
+        esta invitación es exclusiva para ti 💌
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Sección RSVP -->
+<section id="rsvp" class="box fade-in">
+  <h2>Confirma tu asistencia</h2>
+  <form id="rsvp-form">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    
+    <select name="asistencia" required>
+      <option value="">¿Asistirás?</option>
+      <option value="Sí">Sí</option>
+      <option value="No">No</option>
+    </select>
+    
+    <input type="number" name="acompanantes" placeholder="Número de acompañantes" min="0">
+    
+    <textarea name="mensaje" placeholder="Telefono y Mensaje opcional"></textarea>
+    
+    <button type="submit">Enviar</button>
+  </form>
+  <h3>Se pondra en contacto nuestra coordinadora para confirmar tu asistencia</h3>
+  <p id="form-status"></p>
+</section>
+<audio controls autoplay loop>
+  <source src="Lana Del Rey - Say Yes To Heaven (Official Audio).mp3" type="audio/mpeg">
+</audio>
+  <footer>
+    <p>Con cariño, Evelin & Misael 💍</p>
+  </footer>
+
+  <!-- Script contador -->
+  <script>
+    const countDownDate = new Date("Nov 22, 2025 20:00:00").getTime();
+
+    const x = setInterval(function() {
+      let now = new Date().getTime();
+      let distance = countDownDate - now;
+
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerHTML =
+        days + " D : " + hours + " H : " + minutes + " M : " + seconds + " S";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "¡Hoy es el gran día!";
+      }
+    }, 1000);
+
+    // Efecto fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+    // Efecto desvanecer portada al hacer scroll
+    window.addEventListener("scroll", function() {
+      const hero = document.querySelector(".hero");
+      hero.style.opacity = 1 - window.scrollY / 600;
+    });
+  </script>
+
+  <script>
+  const items = document.querySelectorAll('.timeline-item');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+</script>
+
+<script>
+document.getElementById("rsvp-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = {
+    nombre: form.nombre.value,
+    asistencia: form.asistencia.value,
+    acompanantes: form.acompanantes ? form.acompanantes.value : "",
+    mensaje: form.mensaje.value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbwuyYe7fNScDMQvCkUBVOJHXgErLqyW6qjF-ZdAP6m-Ix429_fI-g5nppWJFqpInMym2Q/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    document.getElementById("form-status").innerText = "✅ ¡Gracias por confirmar!";
+    form.reset();
+  })
+  .catch(err => {
+    console.error(err);
+    document.getElementById("form-status").innerText = "❌ Error, intenta de nuevo.";
+  });
+});
+</script>
+
+
+
+</body>
+</html>
