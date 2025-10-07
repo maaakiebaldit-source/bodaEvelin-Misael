@@ -479,35 +479,42 @@ footer {
 
 /* responsive */
 @media (max-width: 820px) {
-.timeline::before {
-    left: 28px; /* Mueve la línea central a la izquierda */
+  /* ... (Tus otras correcciones de Navbar, Hero, etc.) ... */
+
+  /* --- PROGRAMA / TIMELINE CORRECCIÓN --- */
+  
+  /* 1. Mover la línea central a la izquierda */
+  .timeline::before {
+    left: 28px; 
   }
 
+  /* 2. Todos los ítems ocupan el 100% y se anclan a la izquierda */
   .timeline-item {
-    width: 100%; /* Ocupa todo el ancho */
-    left: 0; /* Asegura que el contenedor esté al inicio */
-    padding: 18px 16px 18px 60px; /* Suficiente espacio para que la tarjeta no choque con la línea */
-    text-align: left; /* Todo alineado a la izquierda */
+    width: 100%;
+    left: 0;
+    padding: 18px 16px 18px 60px; /* Asegura espacio a la izquierda para la línea/punto */
+    text-align: left; /* MUY IMPORTANTE: Alinea el texto a la izquierda */
   }
 
-  /* Anclaje de los puntos del timeline a la nueva posición de la línea */
+  /* 3. Anular la alineación derecha de los ítems 'left' de escritorio */
+  .timeline-item.left {
+    text-align: left; /* Obliga a la izquierda */
+  }
+
+  /* 4. Anclaje de los puntos del timeline */
   .timeline-item.left::before,
   .timeline-item.right::before {
-    left: 22px; /* Ancla los puntos sobre la línea vertical */
+    left: 22px; /* Posición del punto sobre la línea */
     right: auto;
   }
-
-  /* Forzamos que los ítems del lado "izquierdo" se alineen a la izquierda en móvil */
-  .timeline-item.left {
-    text-align: left; /* ANULA el text-align: right; del CSS de escritorio */
-  }
-
-  .timeline-card {
-    max-width: 100%; /* La tarjeta ocupa todo el espacio disponible */
-    flex-direction: row; /* Mantenemos la foto junto al texto */
+  
+  /* 5. Asegurar que las tarjetas estén alineadas a la izquierda (no centradas ni a la derecha) */
+  .timeline-item.left .timeline-card,
+  .timeline-item.right .timeline-card {
+    margin-left: 0; /* Eliminar cualquier margen automático de centrado */
+    /* Aseguramos que la tarjeta esté a la izquierda del padding */
   }
 }
-
 
 /* --- Sección Regalo --- */
 .regalo-section {
