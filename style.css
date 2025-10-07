@@ -67,7 +67,9 @@ header {
 }
 .hero h1 {
   font-size: 8rem;
-  font-family: 'High Empathy', serif;
+  font-family: 'High Empathy'; /* Nombre exacto que usas en el CSS */
+  src: url('HighEmpathy.ttf') format('woff2'), /* La ruta ahora es relativa */
+       url('HighEmpathy.otf') format('woff');
   margin: 0;
 }
 .hero p {
