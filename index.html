@@ -197,12 +197,35 @@
   <h3>Se pondra en contacto nuestra coordinadora para confirmar tu asistencia</h3>
   <p id="form-status"></p>
 </section>
-<audio controls autoplay loop>
+<audio id="boda-audio" loop>
   <source src="Lana Del Rey - Say Yes To Heaven (Official Audio).mp3" type="audio/mpeg">
 </audio>
   <footer>
     <p>Con cariño, Evelin & Misael 💍</p>
   </footer>
+
+  <script>
+  const audio = document.getElementById("boda-audio");
+
+  function tryPlay() {
+    audio.play().then(() => {
+      console.log("🎵 Reproducción iniciada");
+      document.removeEventListener("scroll", tryPlay);
+      document.removeEventListener("click", tryPlay);
+      document.removeEventListener("touchstart", tryPlay);
+    }).catch(err => {
+      console.log("⚠️ Bloqueado hasta interacción:", err);
+    });
+  }
+
+  // Intenta reproducir al cargar
+  tryPlay();
+
+  // Si no se puede, lo intentamos tras la primera interacción
+  document.addEventListener("scroll", tryPlay);
+  document.addEventListener("click", tryPlay);
+  document.addEventListener("touchstart", tryPlay);
+</script>
 
   <!-- Script contador -->
   <script>
