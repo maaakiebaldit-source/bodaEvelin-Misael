@@ -7,6 +7,14 @@ body {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: 'High Empathy';
+  src: url('fonts/HighEmpathy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Navbar con efecto moderno */
 header {
   position: fixed;
@@ -62,7 +70,7 @@ header {
 }
 .hero h1 {
   font-size: 8rem;
-  font-family: 'High Empathy', serif;
+  font-family: 'HighEmpathy', serif;
   margin: 0;
 }
 .hero p {
