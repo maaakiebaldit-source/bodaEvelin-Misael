@@ -9,10 +9,12 @@ body {
 
 @font-face {
   font-family: 'High Empathy';
-  src: url('HighEmpathy.ttf') format('truetype');
+  src:url('HighEmpathy.otf') format('opentype'),
+    url('HighEmpathy.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
 
 
 /* Navbar con efecto moderno */
